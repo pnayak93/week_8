@@ -2,7 +2,7 @@
 
 The featurecounts.sh file is used to generate a slurm batch job for creating a counts matrix for every aligned RG.bam file created during the aligning step of RNAseq. These counts files will be processed in DEseq2 in the following week.
 
-The featurecounts.sh file is meant to be kept in the same directory as the sorted bam files, and looks as follows:
+The `featurecounts.sh` file is meant to be kept in the same directory as the sorted bam files, and looks as follows:
 
 ```
 #!/bin/bash
@@ -18,8 +18,8 @@ featureCounts -p -T 12 -t exon -g gene_id -Q 30 -F GTF -a $gtf -o fly_counts_2.t
 
 ```
 
-For DNAseq files, the mergeDNA.sh file merges bam files together, then uses this output to generate vcf files. 
-The mergevcf file merges all the vcf files together for SNP calling.
+For DNAseq files, the `mergeDNA.sh` file merges bam files together, then uses this output to generate vcf files. 
+The `mergevcf.sh` file merges all the vcf files together for SNP calling.
 both of these files are run as batch slurm jobs.
 
 
